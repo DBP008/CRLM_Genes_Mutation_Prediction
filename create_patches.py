@@ -41,7 +41,7 @@ def patching(WSI_object, **kwargs):
 
 def seg_and_patch(source, save_dir, patch_save_dir, mask_save_dir, stitch_save_dir, 
 				  patch_size = 256, step_size = 256, custom_downsample=1, 
-				  seg_params = {'seg_level': -1, 'sthresh': 8, 'mthresh': 7, 'close': 4, 'use_otsu': False,
+				  seg_params = {'seg_level': 5, 'sthresh': 8, 'mthresh': 7, 'close': 4, 'use_otsu': False,
 				  'keep_ids': 'none', 'exclude_ids': 'none'},
 				  filter_params = {'a_t':100, 'a_h': 16, 'max_n_holes':8 }, 
 				  vis_params = {'vis_level': -1, 'line_thickness': 250},
@@ -73,6 +73,8 @@ def seg_and_patch(source, save_dir, patch_save_dir, mask_save_dir, stitch_save_d
 	patch_times = 0.
 	stitch_times = 0.
 
+
+
 	for i in range(total):
 		df.to_csv(os.path.join(save_dir, 'process_list_autogen.csv'), index=False)
 		idx = process_stack.index[i]
@@ -87,6 +89,7 @@ def seg_and_patch(source, save_dir, patch_save_dir, mask_save_dir, stitch_save_d
 			print('{} already exist in destination location, skipped'.format(slide_id))
 			df.loc[idx, 'status'] = 'already_exist'
 			continue
+
 
 		# Inialize WSI
 		full_path = os.path.join(source, slide)
