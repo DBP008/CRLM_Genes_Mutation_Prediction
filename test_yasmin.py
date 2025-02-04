@@ -1,4 +1,6 @@
 
+#prova
+
 import sys
 sys.path.append('/home/yasmin/Desktop/CLAM/')  # Percorso del progetto CLAM
 import os
