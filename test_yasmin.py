@@ -1,5 +1,6 @@
 
-#prova
+
+
 
 import sys
 sys.path.append('/home/yasmin/Desktop/CLAM/')  # Percorso del progetto CLAM
@@ -12,8 +13,8 @@ from wsi_core.wsi_utils import StitchPatches
 from wsi_core.batch_process_utils import initialize_df
 
 # Percorsi specifici per il dataset
-source = '/home/yasmin/Desktop/CLAM/dataset_images'
-save_dir = '/home/yasmin/Desktop/CLAM/my_output'
+source = '/mnt/DATA/YASMIN/immagini'
+save_dir = ''
 patch_save_dir = os.path.join(save_dir, 'patches')
 os.makedirs(patch_save_dir, exist_ok=True)
 
